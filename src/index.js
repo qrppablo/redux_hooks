@@ -7,12 +7,12 @@ import reportWebVitals from "./reportWebVitals";
 // El componente App, recibirá el store de Redux a través del componente Provider.
 import { Provider } from "react-redux";
 // Importamos createStore() de Redux, para crear el store con nuestros reducers.
-import { createStore } from "redux";
+import { createStore, compose } from "redux";
 // Importamos los reducers.
 import reducers from "./reducers";
 
 // Creamos una constante para utilizar la extensión "Redux DevTools" en Google Chrome.
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 // Creamos el store con los reducers y la extensión.
 const store = createStore(
